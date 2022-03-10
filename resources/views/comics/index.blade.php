@@ -19,10 +19,10 @@
                     <a href="{{route('comics.show', $fumetto->id)}}"><button type="button" class="btn btn-link p-0">Link</button></a>
                     <a href="{{route('comics.edit', $fumetto->id)}}" class="m-3"><button type="button" class="btn btn-primary">Modifica</button></a>                    
                 </p>
-                <form action="{{route('comics.destroy', $fumetto->id)}}" method="POST">
+                <form action="{{route('comics.destroy', $fumetto->id)}}" method="POST" class="mb-3">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-danger" onclick="cancella()">Cancella</button>
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('Sei sicuro?')">Cancella</button>
                 </form>
                 
             </div>

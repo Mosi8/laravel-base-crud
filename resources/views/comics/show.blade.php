@@ -14,10 +14,10 @@
         <p class="text-white my-1">{{$comic->description}}</p>
         <span class="text-white my-1 d-block">Series: {{$comic->series}}</span>
         <span class="text-white mb-5 d-block">Price: {{$comic->price}}€</span>
-        <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
+        <form action="{{route('comics.destroy', $comic->id)}}" method="POST" class="mb-3">
             @csrf
             @method("DELETE")
-            <button type="submit" class="btn btn-danger">Cancella</button>
+            <button type="submit" class="btn btn-danger" onclick="return confirm('Sei sicuro?')">Cancella</button>
         </form>
         <a href="{{route('comics.index')}}"><button type="button" class="btn btn-light">Back</button></a>
     </div>
